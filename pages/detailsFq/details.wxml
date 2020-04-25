@@ -1,0 +1,96 @@
+<!--pages/details/details.wxml-->
+<!-- <view class='content'>
+    <import src="../../wxParse/wxParse.wxml" />
+    <view class='myParse'>
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+</view> -->
+<view wx:if='{{isPage==2}}' style='padding-top:250rpx'>
+      <image src='/images/nodata.png' style='width:100%;height:400rpx'></image>
+</view>
+<block wx:if='{{isPage==1}}'>
+      <view class='detail-wrap'>
+            <view class='topimg'>
+                  <image src='../../images/detailtop.jpg' class='img-t'></image>
+                  <block wx:if='{{is_like=="1"}}'>
+                        <block wx:if='{{canLike}}'>
+                              <view class='dianzan' bindtap='likeCancleHandle'>
+
+                                    <image src='../../images/dianzan_on.png'></image>
+                                    <view>{{likeNum}}</view>
+                              </view>
+                        </block>
+                        <block wx:else>
+                              <view class='dianzan' bindtap='likeHandle'>
+                                    <image src='../../images/dianzan.png'></image>
+                                    <view>{{likeNum}}</view>
+                              </view>
+                        </block>
+
+                  </block>
+
+            </view>
+            <view style='padding:0 24rpx;box-sizing:border-box'>
+                  <view class='main'>
+                        <view class='tit-img'>
+                              <image src='/images/fqjq_tit.png'></image>
+                        </view>
+                        <view class='rt'></view>
+                        <!-- 1 -->
+                        <view class='des'>
+                              <view style="padding:20rpx 0;color:#333;font-weight:600;font-size:30rpx">铁铃关</view>
+                              <text decode="emsp" selectable>&emsp;&emsp;铁铃关由城楼、关台等组成，建于明嘉靖三十六年（1557年），又称枫桥敌楼，为苏州“三关”之一(另两处为浒墅关、金阊关，今已毁)，是明代抗倭斗争的重要遗迹。清道光九年（1829年）重修，次年改建上层为文星阁。其后年久失修，阁楼颓毁，雉堞、女墙、射孔等都已倾圮无存。1949年4月27日中国人民解放军29军85、86师击溃了枫桥、铁铃关一线的守敌后，由此进入苏州城，打响了解放苏州的第一枪。关台正面宽15米，纵深10.2米，高7米。正中辟拱门，门洞上刻“铁铃关”三字。关门内南北壁面均辟大小拱门各一，内砌登关砖级，并有驻军洞。关门外即为枫桥和大运河。 </text>
+                        </view>
+                        <view class='main-img'>
+                              <image src='https://jcxcx.sunkoda.com/upload/content/8/1.jpg' mode='widthFix'></image>
+                        </view>
+                        <view class='main-img'>
+                              <image src='https://jcxcx.sunkoda.com/upload/content/8/2.jpg' mode='widthFix'></image>
+                        </view>
+                        <!-- 2 -->
+                        <view class='des' style="margin-top:30rpx">
+                              <view style="padding:20rpx 0;color:#333;font-weight:600;font-size:30rpx">寒山寺</view>
+                              <text decode="emsp" selectable>&emsp;&emsp;寒山寺位于苏州市姑苏区，始建于南朝萧梁代天监年间（502—519年），初名“妙利普明塔院”。寒山寺占地面积约1.3万平方米，建筑面积三千四百余平方米。</text>
+                        </view>
+                        <view class='main-img'>
+                              <image src='https://jcxcx.sunkoda.com/upload/content/4/1.jpg' mode='widthFix'></image>
+                        </view>
+                        <view class='main-img'>
+                              <image src='https://jcxcx.sunkoda.com/upload/content/4/2.jpg' mode='widthFix'></image>
+                        </view>
+                        <view class='main-img'>
+                              <image src='https://jcxcx.sunkoda.com/upload/content/4/3.jpg' mode='widthFix'></image>
+                        </view>
+                        <view class='main-img'>
+                              <image src='https://jcxcx.sunkoda.com/upload/content/4/5.jpg' mode='widthFix'></image>
+                        </view>
+                        <view class='des1' style='margin-top:40rpx'>
+                              <image src='../../images/yd.png' class='yd'></image>
+                              <image src='../../images/zd.png' class='zd'></image>
+                              <image class='renwen-img' src='../../images/renwen.png'></image>
+
+                              <view>
+                                    <text style='background:#f2eee4' selectable>（1）传世诗词—枫桥夜泊</text>
+                              </view>
+                              <view>
+                                    <text decode="emsp" selectable> &emsp;&emsp;《枫桥夜泊》是唐代诗人张继的作品，张继（约715—约779年），唐代诗人。《唐才子传》中说他“博览有识，好谈论，知治体”，提到他是一位重视气节，有抱负有理想的人，不仅有诗名，品格也受人敬重。唐朝安史之乱后，张继途经寒山寺时写下这首羁旅诗。此诗精确而细腻地描述了一个客船夜泊者对江南深秋夜景的观察和感受，勾画了月落乌啼、霜天寒夜、江枫渔火、孤舟客子等景象，有景有情有声有色。此外，这首诗也将作者羁旅之思，家国之忧，以及身处乱世尚无归宿的顾虑充分地表现出来，是写愁的代表作。</text>
+                              </view>
+					<view>
+                                    <text style='background:#f2eee4' selectable>（2）和合文化—寒山与拾得的故事</text>
+                              </view>
+                              <view>
+                                    <text decode="emsp" selectable>&emsp;&emsp; 民间对“和合二仙”有各种传说。从寒山与拾得流传下来的三百多首诗来看，寒山与拾得二人在历史上确实存在。据传，寒山与拾得为隋末唐初僧人，他们成为了“和合文化”的人物载体，他们的情怀和情义成为了寒山寺“和合文化”的精髓，引导人们相互理解、相互忍让、相互帮助、互敬互爱、和睦相处，引导人们在事业上相互支持、相互配合、共同合作、共同发展，引导人们以制度戒律规范修养身心，以利益公平分配为价值取向，强调一致的价值伦理观念和团结、和睦、友爱的人文关系。</text>
+                              </view>
+                        </view>
+				<!-- 3 -->
+				<view class='des' style="margin-top:30rpx">
+                              <view style="padding:20rpx 0;color:#333;font-weight:600;font-size:30rpx">枫景益站</view>
+                              <text decode="emsp" selectable>&emsp;&emsp;由金阊街道党工委牵头，运河社区铁铃关行动支部、枫桥景区行动支部、好行行动支部、旅游集散行动支部和文明使者行动支部共同成立的“枫景益站”党员志愿服务站，打造红色主题党员服务基地，近百名党员志愿者将践行相互帮助、互敬互爱、和睦相处的和合文化，在寒山寺及枫桥景区周边为游客提供服务。</text>
+                        </view>
+				<view class='main-img'>
+                              <image src='https://jcxcx.sunkoda.com/upload/content/15/1.jpg' mode='widthFix'></image>
+                        </view>
+                  </view>
+            </view>
+      </view>
+</block>

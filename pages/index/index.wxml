@@ -1,0 +1,9 @@
+<view class='fj-container'>
+    <scroll-view style='width:100%;height:100%' scroll-y='{{false}}' scroll-x="{{true}}" scroll-left='{{scrollLeft}}'>
+        <image src='https://jcxcx.sunkoda.com/upload/material/dt.jpg' style='width:{{bgImg.width}}px;height:{{bgImg.height}}px'></image>
+        <block wx:for='{{imgs}}' wx:key=''>
+            <image src='{{item.src}}' style="position:absolute;left:{{item.left}}px;top:{{item.top}}px;width:{{item.width}}px;height:{{item.height}}px;z-index:{{item.zIndex?item.zIndex:1}}" data-id='{{item.id}}' data-name='{{item.name}}' bindtap='imgTap'></image>
+        </block>
+    </scroll-view>
+
+</view>

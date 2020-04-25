@@ -1,0 +1,117 @@
+<!--pages/details/details.wxml-->
+<!-- <view class='content'>
+    <import src="../../wxParse/wxParse.wxml" />
+    <view class='myParse'>
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+    </view>
+</view> -->
+<view wx:if='{{isPage==2}}' style='padding-top:250rpx'>
+    <image src='/images/nodata.png' style='width:100%;height:400rpx'></image>
+</view>
+<block wx:if='{{isPage==1}}'>
+    <view class='detail-wrap'>
+        <view class='topimg'>
+            <image src='../../images/detailtop.jpg' class='img-t'></image>
+            <block wx:if='{{is_like=="1"}}'>
+                <block wx:if='{{canLike}}'>
+                    <view class='dianzan' bindtap='likeCancleHandle'>
+
+                        <image src='../../images/dianzan_on.png'></image>
+                        <view>{{likeNum}}</view>
+                    </view>
+                </block>
+                <block wx:else>
+                    <view class='dianzan' bindtap='likeHandle'>
+                        <image src='../../images/dianzan.png'></image>
+                        <view>{{likeNum}}</view>
+                    </view>
+                </block>
+
+            </block>
+
+        </view>
+        <view style='padding:0 24rpx;box-sizing:border-box'>
+            <view class='main'>
+                <view class='tit-img'>
+                    <image src='{{detailData.title}}'></image>
+                </view>
+                <view class='rt'></view>
+                
+                <view class='des' decode="">
+                <view wx:if='{{detailData.video}}'>
+                    <video src='{{detailData.video}}' style='width:100%' autoplay='{{false}}' custom-cache="{{false}}" poster='{{detailData.poster}}'></video>
+                </view>
+                    <text decode="emsp" selectable>
+            {{detailData.des}}
+            </text>
+
+                </view>
+                <view class='main-img'>
+                    <image src='{{detailData.coverImg}}' mode='widthFix'></image>
+                </view>
+                <view class='des1' wx:if='{{detailData.des1}}'>
+                    <image src='../../images/yd.png' class='yd'></image>
+                    <image src='../../images/zd.png' class='zd'></image>
+                    <text decode="emsp" selectable>
+                    {{detailData.des1}}
+                </text>
+                </view>
+                <view class='main-imgs' wx:if='{{detailData.imgs.length}}'>
+                    <block wx:if='{{detailData.imgs.length>1}}'>
+                        <view class='short-imgs'>
+                            <block wx:for='{{detailData.imgs}}' wx:key='{{index}}'>
+                                <view class='short' wx:if='{{index%2}}'>
+                                    <image src='{{item}}' mode='widthFix'></image>
+                                    <view class='r-arrow'> {{zuo}} </view>
+                                </view>
+                                <block wx:else>
+                                    <block wx:if='{{index==detailData.imgs.length-1}}'>
+                                        <view class='short' style='width:100%'>
+                                            <view class='r-arrow'> >>>>> </view>
+                                            <image src='{{item}}' mode='widthFix'></image>
+                                        </view>
+
+                                    </block>
+                                    <block wx:else>
+                                        <view class='short'>
+                                            <view class='r-arrow'> >>>>> </view>
+                                            <image src='{{item}}' mode='widthFix'></image>
+                                        </view>
+                                    </block>
+                                </block>
+
+                            </block>
+
+                        </view>
+                    </block>
+                    <block wx:else>
+                        <view class='cover-img'>
+                            <image src='{{detailData.imgs[0]}}' mode='widthFix' style='width:100%'></image>
+                        </view>
+                    </block>
+
+                </view>
+                <view class='des1' wx:if='{{detailData.des2.length}}' style='margin-top:40rpx'>
+                    <image src='../../images/yd.png' class='yd'></image>
+                    <image src='../../images/zd.png' class='zd'></image>
+                    <image class='renwen-img' src='../../images/renwen.png'></image>
+                    <block wx:for='{{detailData.des2}}' wx:key>
+                        <view wx:if='{{item.title}}'>
+                            <text style='background:#f2eee4' selectable>
+                    {{item.title}}
+                    </text>
+                        </view>
+                        <view>
+                            <text decode="emsp" selectable>
+                    {{item.content}}
+                </text>
+                        </view>
+
+                    </block>
+
+
+                </view>
+            </view>
+        </view>
+    </view>
+</block>

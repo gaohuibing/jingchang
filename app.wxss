@@ -1,0 +1,14 @@
+/**app.wxss**/
+/* @import "wxParse/wxParse.wxss"; */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  
+} 
+
+
+/* page,text{
+    font-family: 'fs'
+} */
