@@ -67,15 +67,15 @@ Page({
                         name: '阊门'
                   },
                   // 寒山寺（枫桥景区）
-                  {
-                        width: 819,
-                        height: 294,
-                        left: 416,
-                        top: 2026,
-                        src: oss + '/material/hss.png',
-                        id: 4,
-                        name: '枫桥景区'
-                  },
+                  // {
+                  //       width: 819,
+                  //       height: 294,
+                  //       left: 416,
+                  //       top: 2026,
+                  //       src: oss + '/material/hss.png',
+                  //       id: 4,
+                  //       name: '枫桥景区'
+                  // },
                   // 陆润庠
                   {
                         width: 200,
@@ -127,15 +127,15 @@ Page({
                         name: '枫桥景区'
                   },
                   // 文山禅寺
-                  {
-                        width: 512,
-                        height: 341,
-                        left: 2558,
-                        top: 906,
-                        src: oss + '/material/tscs.png',
-                        id: 9,
-				name: '文丞相弄'
-                  },
+                  // {
+                  //       width: 512,
+                  //       height: 341,
+                  //       left: 2558,
+                  //       top: 906,
+                  //       src: oss + '/material/tscs.png',
+                  //       id: 9,
+			// 	name: '文丞相弄'
+                  // },
                   // 西中市
                   {
                         width: 200,
