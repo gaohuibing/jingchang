@@ -67,15 +67,15 @@ Page({
                         name: '阊门'
                   },
                   // 寒山寺（枫桥景区）
-                  // {
-                  //       width: 819,
-                  //       height: 294,
-                  //       left: 416,
-                  //       top: 2026,
-                  //       src: oss + '/material/hss.png',
-                  //       id: 4,
-                  //       name: '枫桥景区'
-                  // },
+                  {
+                        width: 819,
+                        height: 294,
+                        left: 416,
+                        top: 2026,
+                        src: oss + '/material/hss.png',
+                        id: 4,
+                        name: '枫桥景区'
+                  },
                   // 陆润庠
                   {
                         width: 200,
@@ -127,15 +127,15 @@ Page({
                         name: '枫桥景区'
                   },
                   // 文山禅寺
-                  // {
-                  //       width: 512,
-                  //       height: 341,
-                  //       left: 2558,
-                  //       top: 906,
-                  //       src: oss + '/material/tscs.png',
-                  //       id: 9,
-			// 	name: '文丞相弄'
-                  // },
+                  {
+                        width: 512,
+                        height: 341,
+                        left: 2558,
+                        top: 906,
+                        src: oss + '/material/tscs.png',
+                        id: 9,
+                        name: '文丞相弄'
+                  },
                   // 西中市
                   {
                         width: 200,
@@ -192,56 +192,56 @@ Page({
       /**
        * 生命周期函数--监听页面加载
        */
-      onLoad: function(options) {
+      onLoad: function (options) {
             this.imagesOnload()
       },
 
       /**
        * 生命周期函数--监听页面初次渲染完成
        */
-      onReady: function() {
+      onReady: function () {
 
       },
 
       /**
        * 生命周期函数--监听页面显示
        */
-      onShow: function() {
+      onShow: function () {
 
       },
 
       /**
        * 生命周期函数--监听页面隐藏
        */
-      onHide: function() {
+      onHide: function () {
 
       },
 
       /**
        * 生命周期函数--监听页面卸载
        */
-      onUnload: function() {
+      onUnload: function () {
 
       },
 
       /**
        * 页面相关事件处理函数--监听用户下拉动作
        */
-      onPullDownRefresh: function() {
+      onPullDownRefresh: function () {
 
       },
 
       /**
        * 页面上拉触底事件的处理函数
        */
-      onReachBottom: function() {
+      onReachBottom: function () {
 
       },
 
       /**
        * 用户点击右上角分享
        */
-      onShareAppMessage: function() {
+      onShareAppMessage: function () {
 
       },
       // 图片处理
@@ -258,6 +258,7 @@ Page({
             console.log(fitRatio)
             let originImgs = this.data.imgs;
             originImgs.map((item, index) => {
+                  item.src = item.src + "?" + Math.floor((Math.random()+Math.floor(Math.random()*9+1))*Math.pow(10,9))
                   item.width = item.width / fitRatio;
                   item.height = item.height / fitRatio;
                   item.left = item.left / fitRatio;
